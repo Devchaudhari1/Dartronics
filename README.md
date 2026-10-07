@@ -1,101 +1,250 @@
-# </br>Digital dart board game with speed controller and scoreboard
-<!-- First Section -->
-## Team Details
+<div align="center">
 
-<details>
-  <summary>Detail</summary>
+# 🎯 Digital Dartboard Game
 
-  >S2 T17
+### A Hardware-Driven Digital Dart Game with PRBS-Based Targeting, Speed Control & Scoreboard
 
-  > Semester: 3rd Sem B. Tech. CSE
+![Verilog](https://img.shields.io/badge/Verilog-HDL-8A2BE2?style=for-the-badge)
+![Logisim](https://img.shields.io/badge/Logisim-Digital%20Logic-FF6B35?style=for-the-badge)
+![Hardware](https://img.shields.io/badge/Hardware-Digital%20Circuits-0F9D58?style=for-the-badge)
+![NITK](https://img.shields.io/badge/NITK-CSE-1F6FEB?style=for-the-badge)
 
-  > Section: S2
+**A digital implementation of a dart game combining sequential logic, pseudo-random pattern generation, LED-based target regions, player turn management, and score tracking.**
 
-  > Member-1:Dev Chaudhari , 231CS221 ,devchaudhari.231cs221@nitk.edu.in
-
-  > member-2:Himanshu Bande, 231CS225 ,himanshubande.231cs225@nitk.edu.in
-
-  > Member-3:Aryan         , 231CS213 ,aryan.231cs213@nitk.edu.in
-</details>
-
-<!-- Second Section -->
-## Abstract
-<details>
-  <summary>Detail</summary>
-  
-
-
-## 1. Motivation
-
-A dartboard game is not only a fun way to pass the time but also serves as an engaging tool to develop various skills in individuals. The implementation of a Finite State Machine (FSM) in the digital dart game provides a robust framework to manage the various states of gameplay efficiently. This game emphasizes precision and timing, making it an excellent way to enhance focus and hand-eye coordination. </br></br>Through this project, we aim to create a digital version of the classic dart game using innovative digital circuits. By incorporating features like speed control and a dynamic scoreboard, players can easily track their scores while experiencing a customizable level of challenge as the game progresses. This adaptability adds an exciting layer of suspense and engagement to each round!
+</div>
 
 ---
 
-## 2. Problem Statement
+## 📌 Table of Contents
 
-- The system must accept input signals that accurately represent dart throws on a virtual dartboard.
-- The dartboard must feature a sufficiently large number of distinct target regions, with the bullseye being the most challenging to hit.
-- Additionally, the game should introduce variations to increase difficulty, ensuring a stimulating experience for players.
-- The scoreboard must effectively record game points over a wide range, avoiding overflow to accommodate prolonged gameplay.
-- The overall objective is to develop a digital dart game that is both entertaining and capable of accommodating multiple players while providing an intuitive and responsive gameplay experience.
+- [🎮 Overview](#-overview)
+- [👥 Team](#-team)
+- [💡 Motivation](#-motivation)
+- [🎯 Problem Statement](#-problem-statement)
+- [✨ Key Features](#-key-features)
+- [🧠 System Architecture](#-system-architecture)
+- [⚙️ How It Works](#-how-it-works)
+- [🖥️ Logisim Circuit Design](#️-logisim-circuit-design)
+- [💻 Verilog Implementation](#-verilog-implementation)
+- [🔧 Hardware Implementation](#-hardware-implementation)
+- [📂 Project Structure](#-project-structure)
+- [📚 References](#-references)
 
 ---
 
-## 3. Features
+## 🎮 Overview
 
-- The dartboard utilizes an input signal from a dart throw, represented as a time-varying pointer that periodically navigates among four concentric target regions, illuminated by LEDs to indicate the pointer’s position.
-- The scoreboard can accurately record at least 20 throws without risk of overflow, ensuring comprehensive tracking of player performance.
-- The dartboard includes a variable speed controller, allowing players to adjust the speed at which the pointer changes position, enhancing the challenge.
-- The game is designed for up to three players, promoting friendly competition and social interaction.
-- A penalty will be imposed on the player if the throw time limit is exceeded.
+The **Digital Dartboard Game** is a digital-circuit implementation of a classic dart game designed around **precision, timing, and dynamic target selection**.
 
+The system uses a **time-varying pointer** that moves across four concentric target regions represented using LEDs. A throw captures the current target region and awards points according to the corresponding scoring logic.
 
-Feel free to let me know if you need any further modifications!
-</details>
+### The project combines
 
-<!-- Third Section -->
-## Working
-<details>
-  <summary>Detail</summary>
+- ⚡ Sequential digital logic
+- 🔁 Finite State Machine concepts
+- 🎲 Pseudo-Random Bit Sequence (PRBS) generation
+- 💡 LED-based dartboard patterns
+- 🎚️ Variable speed control
+- 🧮 Multi-player score tracking
+- 🏆 Winner / final-score determination
+- 🖥️ Verilog simulation and hardware implementation
 
-  > ![image](https://github.com/Devchaudhari1/S2-T17/blob/main/Digital%20dartboard%20game%20modularized.drawio.png)
-</details>
+---
 
-<!-- Fourth Section -->
-## Logisim Circuit Diagram
-<details>
-  <summary>Detail</summary>
+## 👥 Team
 
-  Working Instructions
-  >![S2_T17](https://github.com/user-attachments/assets/907e8224-7826-4289-886b-4003ec9c9218)
-  
-Main Module
+| Member | Roll Number | Email |
+|:---|:---:|:---|
+| **Dev Chaudhari** | 231CS221 | devchaudhari.231cs221@nitk.edu.in |
+| **Himanshu Bande** | 231CS225 | himanshubande.231cs225@nitk.edu.in |
+| **Aryan** | 231CS213 | aryan.231cs213@nitk.edu.in |
 
-  >![Maindigitaldartgame](https://github.com/user-attachments/assets/16a7bc57-4218-4f0d-aa8a-b614f975afd8)
+**Course:** B.Tech. CSE — 3rd Semester  
+**Section:** S2  
+**Team:** S2 T17
 
-  PRBS Flux Module
-  >
-  ![PRBS Flux](https://github.com/user-attachments/assets/575946f7-9059-4f13-b150-0e8fa9f82b0a)
-Final Score Comparator
-  >![Final Score Comparator](https://github.com/user-attachments/assets/7a6e533e-e9ea-42f4-aa6e-1d4baf31d736)
+---
 
-  Truth Table For Points Awarded Per Throw
+## 💡 Motivation
 
-  > ![S2_T17_truthtable](https://github.com/user-attachments/assets/e097b109-b863-4d5a-9b9c-c8e492875117)
+A dartboard game is not only an entertaining activity but also provides an engaging way to work with concepts such as **precision, timing, sequential control, and state management**.
 
-   State Equations For Concentric Circles Lit By LEDs
-  >![S2_T17_stateEquation](https://github.com/user-attachments/assets/e9f7804b-ed91-4b0f-a9e4-05b82f8c3b84)
-  >![S2_T17_stateEquationfootnote](https://github.com/user-attachments/assets/9e5105a2-dda6-4ca2-baa4-bbf8127eefd0)
+The project aims to recreate the experience digitally using logic circuits. By combining a dynamically changing target, speed control, and a scoreboard, the game provides an adjustable level of challenge while demonstrating practical applications of digital systems concepts.
 
+---
 
-</details>
+## 🎯 Problem Statement
 
-<!-- Fifth Section -->
-## Verilog Code
-<details>
-  <summary>Detail</summary>
-Verilog main module code :
-<code>
+The system is designed to:
+
+- Accept input signals representing dart throws on a virtual dartboard.
+- Provide multiple distinct target regions, with the bullseye representing the most challenging region.
+- Introduce variations in target movement to increase difficulty.
+- Maintain player scores without premature overflow during gameplay.
+- Support gameplay for multiple players.
+- Provide an intuitive and responsive digital gaming experience.
+
+---
+
+## ✨ Key Features
+
+| Feature | Description |
+|:---|:---|
+| 🎯 **Dynamic Dartboard** | A time-varying pointer navigates across four concentric target regions. |
+| 💡 **LED Indication** | LEDs indicate the current target position. |
+| 🎲 **PRBS Generation** | A pseudo-random sequence generates dynamic dartboard patterns. |
+| 🎚️ **Variable Speed** | Players can adjust the speed at which the pointer changes position. |
+| 👥 **3-Player Support** | The game supports up to three players. |
+| 🧮 **Scoreboard** | Player scores are tracked throughout the game. |
+| ⏱️ **Time Penalty** | A penalty is imposed when the throw time limit is exceeded. |
+| 🏆 **Winner Detection** | The final logic determines the winning player and winning score. |
+
+---
+
+## 🧠 System Architecture
+
+```text
+                         ┌──────────────────────┐
+                         │     Clock / Reset    │
+                         └──────────┬───────────┘
+                                    │
+                                    ▼
+                         ┌──────────────────────┐
+                         │   PRBS / LFSR Logic  │
+                         └──────────┬───────────┘
+                                    │
+                                    ▼
+                         ┌──────────────────────┐
+                         │ Dartboard Target     │
+                         │ / LED Pattern Logic  │
+                         └──────────┬───────────┘
+                                    │
+                         ┌──────────▼───────────┐
+                         │    Throw Button      │
+                         └──────────┬───────────┘
+                                    │
+                                    ▼
+                         ┌──────────────────────┐
+                         │  Scoring & Turn      │
+                         │     Management       │
+                         └──────────┬───────────┘
+                                    │
+                       ┌────────────┴────────────┐
+                       ▼                         ▼
+              ┌─────────────────┐       ┌─────────────────┐
+              │ Score Display   │       │ Winner / Final  │
+              │                 │       │ Score Logic     │
+              └─────────────────┘       └─────────────────┘
+```
+
+### Core Logic
+
+1. The PRBS/LFSR logic generates a changing pseudo-random sequence.
+2. The generated pattern determines the active dartboard region.
+3. LEDs indicate the current region.
+4. When the player presses the throw button, the current region is captured for scoring.
+5. The corresponding points are added to the current player's score.
+6. After the configured number of throws, control moves to the next player.
+7. The final logic compares player scores and identifies the winner.
+
+---
+
+## ⚙️ How It Works
+
+### 1. 🎯 Target Generation
+
+The dartboard contains **four concentric target regions**. A moving pointer periodically changes its position, creating the timing challenge for the player.
+
+### 2. 🎲 PRBS / LFSR
+
+A Linear Feedback Shift Register is used to generate a pseudo-random sequence.
+
+The Verilog implementation uses a 5-bit PRBS register:
+
+```verilog
+prbs <= {prbs[3:0], prbs[4] ^ prbs[2]};
+```
+
+The initial seed is:
+
+```verilog
+5'b10101
+```
+
+The lower PRBS bits are mapped to scoring values:
+
+| PRBS Pattern | Points |
+|:---:|:---:|
+| `000` | **5** |
+| `001` | **4** |
+| `010` | **3** |
+| `011` | **2** |
+| `100` | **1** |
+| Others | **0** |
+
+### 3. 👥 Player Turns
+
+The game maintains:
+
+- Current player
+- Player score
+- Throw count
+- Current PRBS state
+
+The implementation supports **three players**, with the turn changing after five throws.
+
+### 4. 🧮 Score Calculation
+
+The current player's score is updated whenever the throw button is activated:
+
+```verilog
+player_score[player_turn] <=
+    player_score[player_turn] + circle_points;
+```
+
+The current player's ID and score are then exposed through the output signals.
+
+---
+
+## 🖥️ Logisim Circuit Design
+
+The project was developed and represented using modular digital logic circuits.
+
+### 🔷 Overall Working / Modular Design
+
+![Digital Dartboard Architecture](https://github.com/Devchaudhari1/S2-T17/blob/main/Digital%20dartboard%20game%20modularized.drawio.png)
+
+### 🔷 Main Module
+
+![Main Digital Dart Game](https://github.com/user-attachments/assets/16a7bc57-4218-4f0d-aa8a-b614f975afd8)
+
+### 🔷 PRBS Flux Module
+
+![PRBS Flux Module](https://github.com/user-attachments/assets/575946f7-9059-4f13-b150-0e8fa9f82b0a)
+
+### 🔷 Final Score Comparator
+
+![Final Score Comparator](https://github.com/user-attachments/assets/7a6e533e-e9ea-42f4-aa6e-1d4baf31d736)
+
+### 🔷 Truth Table — Points Awarded Per Throw
+
+![Truth Table](https://github.com/user-attachments/assets/e097b109-b863-4d5a-9b9c-c8e492875117)
+
+### 🔷 State Equations — LED Concentric Circles
+
+![State Equations](https://github.com/user-attachments/assets/e9f7804b-ed91-4b0f-a9e4-05b82f8c3b84)
+
+![State Equation Footnote](https://github.com/user-attachments/assets/9e5105a2-dda6-4ca2-baa4-bbf8127eefd0)
+
+---
+
+## 💻 Verilog Implementation
+
+### Main Module
+
+The Verilog module defines the core game interface:
+
+```verilog
 module digital_dart_game (
     input clk,
     input reset,
@@ -105,173 +254,152 @@ module digital_dart_game (
     output [4:0] final_score,
     output [4:0] winner
 );
-wire [4:0] circle_points;  // Randomly generated points for each throw
-reg [4:0] player_score[0:2]; // Array to store total scores for Player 1, 2, 3
-reg [2:0] player_turn;      // Current player's turn (0 for Player 1, 1 for Player 2, 2 for Player 3)
-reg [2:0] throw_count;      // Throw count for each player
-reg [4:0] prbs;             // PRBS for generating random values
+```
 
-// Random number generator using LFSR for circle points
+### 🎲 PRBS Generation
+
+```verilog
 always @(posedge clk or posedge reset) begin
     if (reset)
-        prbs <= 5'b10101;  // Initialize PRBS with a seed value
+        prbs <= 5'b10101;
     else
-        prbs <= {prbs[3:0], prbs[4] ^ prbs[2]};  // Generate new PRBS value
+        prbs <= {prbs[3:0], prbs[4] ^ prbs[2]};
 end
+```
 
-// Circle points assignment based on PRBS value using gates
-assign circle_points = (prbs[2:0] == 3'b000) ? 5 :
-                       (prbs[2:0] == 3'b001) ? 4 :
-                       (prbs[2:0] == 3'b010) ? 3 :
-                       (prbs[2:0] == 3'b011) ? 2 :
-                       (prbs[2:0] == 3'b100) ? 1 : 0;
+### 🎯 Point Assignment
 
-// Logic for scoring and changing turns using gates
-always @(posedge clk or posedge reset) begin
-    if (reset) begin
-        player_score[0] <= 0;
-        player_score[1] <= 0;
-        player_score[2] <= 0;
-        player_turn <= 0;
-        throw_count <= 0;
-    end else if (throw_button) begin
-        // Add points to the current player's score
-        player_score[player_turn] <= player_score[player_turn] + circle_points;
-        throw_count <= throw_count + 1;
+```verilog
+assign circle_points =
+    (prbs[2:0] == 3'b000) ? 5 :
+    (prbs[2:0] == 3'b001) ? 4 :
+    (prbs[2:0] == 3'b010) ? 3 :
+    (prbs[2:0] == 3'b011) ? 2 :
+    (prbs[2:0] == 3'b100) ? 1 : 0;
+```
 
-        // Change player's turn after 5 throws
-        if (throw_count == 4) begin
-            throw_count <= 0;
-            player_turn <= player_turn + 1;
-        end
+### 👥 Player & Score Management
 
-        // Reset to Player 1 after Player 3's turn
-        if (player_turn == 3)
-            player_turn <= 0;
-    end
-end
+The design stores individual scores for three players:
 
-// Calculate the final score as the sum of all player scores
-wire [4:0] sum1, sum2, total_score, winner;
-assign sum1 = player_score[0] + player_score[1]; // Sum of scores of Player 1 and Player 2
-assign sum2 = sum1 + player_score[2];            // Sum of Player 1, Player 2, and Player 3
-assign total_score = (player_score[0] > player_score[1]) ? player_score[0] : (player_score[1]>player_score[2])?player_score[1] : player_score[2];      // Ensure non-zero final score if sum is zero
-assign winner = (player_score[0] > player_score[1]) ? 1 : (player_score[1]>player_score[2])?2 : 3;  
-// Assign output signals
-assign player_id = player_turn + 1;
-assign score_display = player_score[player_turn];
-assign final_score = total_score;
-    
-  
+```verilog
+reg [4:0] player_score[0:2];
+reg [2:0] player_turn;
+reg [2:0] throw_count;
+```
 
-endmodule
-</code>
+The game changes the active player after five throws.
 
+### 🧪 Testbench
 
- Verilog testbench code 
-<code>
-`include "S2_T17.v"
-module tb_digital_dart_game;
-reg clk;
-reg reset;
-reg throw_button;
-wire [2:0] player_id;
-wire [4:0] score_display;
-wire [4:0] winning_score;
-wire [4:0] winner;
+The repository also contains a Verilog testbench that:
 
-// Instantiate the game module
-digital_dart_game uut (
-    .clk(clk),
-    .reset(reset),
-    .throw_button(throw_button),
-    .player_id(player_id),
-    .score_display(score_display),
-    .final_score(winning_score),.winner(winner)
+- Generates the clock.
+- Applies reset.
+- Simulates throws for all three players.
+- Monitors player ID.
+- Monitors player score.
+- Monitors winning score.
+- Monitors winner output.
+
+Example monitoring logic:
+
+```verilog
+$monitor(
+    "Time: %0t | Player ID: %0d | Player Score: %0d | Winning Score: %0d | Winner: %0d",
+    $time,
+    player_id,
+    score_display,
+    winning_score,
+    winner
 );
+```
 
-// Clock generation
-initial begin
-    clk = 0;
-    forever #5 clk = ~clk; // 10 time units period
-end
+---
 
-// Simulation logic
-initial begin
-    // Reset and initialize
-    reset = 1;
-    throw_button = 0;
-    #10 reset = 0;
+## 🔧 Hardware Implementation
 
-    // Simulate throws for each player
-    repeat (3) begin
-        for (integer i = 0; i < 5; i = i + 1) begin
-            throw_button = 1;
-            #10 throw_button = 0;
-            #20;
-        end
-    end
+The project extends the digital design into physical hardware using basic digital logic ICs.
 
-    // End simulation
-    #100;
-    $finish;
-end
+### 🎲 PRBS Generator for Dartboard Patterns
 
-// Monitor the outputs
-initial begin
-    $monitor("Time: %0t | Player ID: %0d | Player Score: %0d | Winning Score: %0d | Winner: %0d",
-             $time, player_id, score_display, winning_score,winner);
-end
+The hardware PRBS generator uses:
 
-    
-  
+- **7474 D-type flip-flops**
+- **7486 XOR gates**
 
-endmodule
-</code>
-</details>
-<!-- Fifth Section --> 
+The implementation follows an **LFSR-based configuration**, where the flip-flops store and shift the binary state while XOR gates provide feedback.
 
-## Hardware Implementation       
+The resulting pseudo-random sequence controls the LED-based dartboard patterns.
 
+The hardware implementation uses a **15-bit sequence** for the dartboard pattern generation and initializes the PRBS with a seed value of **1**, using the 3rd and 4th bits for initialization.
 
-<details>
-  <summary><strong>Salient Features</strong></summary><br>
+### ➕ 5-Bit BCD Address Logic
 
-  <summary><strong>PRBS Generator for Dartboard Patterns</strong></summary><br>
+The project uses **7483 4-bit binary full adder ICs** to implement the address logic.
 
-  The project involves the implementation of a **Pseudo-Random Bit Sequence (PRBS)** generator using **7474 D-type flip-flops** and **7486 XOR gates**. The PRBS generator produces a 15-bit sequence that controls the **dartboard patterns** displayed on a series of LEDs. The design employs a **Linear Feedback Shift Register (LFSR)** configuration, where the flip-flops store and shift binary data, and the XOR gates provide feedback to generate the random sequence. This sequence is then used to control the dynamic lighting of the dartboard, simulating random dart throws.
+The design uses three 7483 ICs for the 5-bit address logic, with carry propagation between stages.
 
-  The PRBS generator is initialized with a **seed value of 1**, which is set by selecting the **3rd** and **4th bits** of the sequence. This seed ensures that the sequence begins with a known state, from which the pseudo-random pattern evolves, providing consistent and predictable random behavior for the dartboard display.
+This enables address generation across the **0–31 decimal range** for controlling the dartboard patterns.
 
-  This implementation showcases the use of basic digital logic components to generate pseudo-random sequences, offering a cost-effective and reliable solution for creating random patterns in visual applications such as a dartboard simulation.
+### 📸 Hardware Snapshots
 
+#### PRBS Module
 
-  <summary><strong>5-Bit BCD Address Logic Using 7483 ICs</strong></summary><br>
+![PRBS Hardware](https://github.com/Devchaudhari1/S2-T17/blob/main/Snapshots/PRBS%20Module(hardware).png)
 
-  The project utilizes a **5-bit BCD address** generated and maintained using **three 7483 4-bit binary full adder ICs**. Each IC handles the addition of BCD digits, ensuring the address remains within the valid range of 0 to 31 (decimal). The first two ICs handle the primary 4-bit BCD values, while the third IC manages carry propagation and overflow. This logic guarantees that the system can dynamically generate addresses for controlling various dartboard patterns.
+#### 5-Bit BCD Adder
 
-  The carry-out from one IC feeds into the next, allowing for accurate address calculation and sequencing across the 5-bit range. This efficient address logic ensures smooth and reliable dartboard pattern control.
+![5 Bit BCD Adder](https://github.com/Devchaudhari1/S2-T17/blob/main/Snapshots/5%20bit%20bcd%20adder(hardware).png)
 
-  <summary><strong>Visuals of Implementation</strong></summary><br>
+#### Achievement Unlocked Module
 
- 
-https://github.com/Devchaudhari1/S2-T17/blob/main/Snapshots/PRBS%20Module(hardware).png
+![Achievement Unlocked](https://github.com/Devchaudhari1/S2-T17/blob/main/Snapshots/Achievement%20Unlocked%20Module(hardware).png)
 
- 
-https://github.com/Devchaudhari1/S2-T17/blob/main/Snapshots/5%20bit%20bcd%20adder(hardware).png 
+---
 
-https://github.com/Devchaudhari1/S2-T17/blob/main/Snapshots/Achievement%20Unlocked%20Module(hardware).png    
+## 📂 Project Structure
 
+```text
+S2-T17/
+│
+├── Logisim/
+│   └── Digital circuit designs
+│
+├── Snapshots/
+│   ├── PRBS Module (hardware)
+│   ├── 5 bit BCD adder (hardware)
+│   └── Achievement Unlocked Module (hardware)
+│
+├── Verilog/
+│   ├── Main module
+│   └── Testbench
+│
+├── Digital dartboard game modularized.drawio.png
+│
+└── README.md
+```
 
-</details>
+---
 
+## 📚 References
 
-<!--Sixth Section-->
-## References
-<details>
- <summary>Detail</summary>
+1. **Digital anti-windup PI controllers for variable-speed motor drives using FPGA and stochastic theory**  
+   Zhang, Dai; Li, Hui; Collins, Emmanuel G.  
+   *IEEE Transactions on Power Electronics*, Volume 21, Issue 5, Pages 1496–1501, 2006.  
+   [IEEE Xplore](https://ieeexplore.ieee.org/document/1640711)
 
-1. [Digital anti-windup PI controllers for variable-speed motor drives using FPGA and stochastic theory](https://ieeexplore.ieee.org/document/1640711) by Zhang, Dai; Li, Hui; Collins, Emmanuel G. Published in *IEEE Transactions on Power Electronics*, Volume 21, Issue 5, Pages 1496–1501, Year 2006.
+2. **Real-time digital hardware simulation of power electronics and drives**  
+   Parma, Gustavo G.; Dinavahi, Venkata.  
+   *IEEE Transactions on Power Delivery*, Volume 22, Issue 2, Pages 1235–1246, 2007.  
+   [IEEE Xplore](https://ieeexplore.ieee.org/document/4130508)
 
-2. [Real-time digital hardware simulation of power electronics and drives](https://ieeexplore.ieee.org/document/4130508) by Parma, Gustavo G; Dinavahi, Venkata. Published in *IEEE Transactions on Power Delivery*, Volume 22, Issue 2, Pages 1235–1246, Year 2007.
-</details>
+---
+
+<div align="center">
+
+### 🎯 Built with Digital Logic • Verilog • Logisim • Hardware
+
+**S2 T17 · B.Tech. CSE · NITK**
+
+</div>
